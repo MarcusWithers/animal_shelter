@@ -95,6 +95,9 @@ input {
 }
 
 footer {
+}
+
+.signin_footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,8 +108,37 @@ footer {
   border-radius: 15px;
 }
 
+.homepage_footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .contact_container {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+}
+
+.training_container {
+  display: flex;
+}
+
+.left_tc {
+  width: 341px;
+}
+
+.middle_tc {
+  width: 341px;
+}
+.right_tc {
+  width: 341px;
+}
+
+.leftfooter {
+  margin-top: 25px;
+  width: 500px;
+}
+
+.rightfooter {
+  margin-top: 25px;
 }
