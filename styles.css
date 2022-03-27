@@ -23,12 +23,19 @@
   display: inline-block;
   margin-left: 120px;
   margin-right: 20px;
+  
 }
 body {
   margin: auto;
   width: 1024px;
   height: 1024px;
+  background-image: url('backgroundcat1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right;
+  
 }
+
 .heading {
   display: flex;
   justify-content: center;
