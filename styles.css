@@ -159,3 +159,13 @@ footer {
 .rightfooter {
   margin-top: 25px;
 }
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+.row {
+  content: "";
+  clear: both;
+  display: table;
+}
