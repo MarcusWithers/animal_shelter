@@ -160,12 +160,18 @@ footer {
   margin-top: 25px;
 }
 .column {
-  float: left;
-  width: 33.33%;
   padding: 5px;
 }
-.row {
-  content: "";
-  clear: both;
-  display: table;
+.photo {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+}
+#founderTitle{
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
