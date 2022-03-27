@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
 }
+.headerSignOn {
+  margin-right: 0%;
+  margin-left: auto;
+  display: block;
+}
+.headerSignOut {
+    margin-right: 0%;
+    margin-left: auto;
+    display: block;
+}
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -12,7 +22,7 @@
 .nav {
   display: inline-block;
   margin-left: 120px;
-  margin-right: 120px;
+  margin-right: 20px;
 }
 body {
   margin: auto;
