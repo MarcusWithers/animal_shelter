@@ -32,16 +32,25 @@ Josiah Walter, and Marcus Withers -->
 		</div>
   </header>
   
-  
   <body>
+    
+    <!--Insert Page Heading-->
+    <div class="heading">
+        <h1>Welcome Volunteers </h1>
+    </div>
+    <br></br>
+    <!--Insert Body of Page-->
       <div class = "container">
 		<div class= "leftContainer">
-			<h2>Welcome Volunteers</h2>
-			<h3>Sign in or Create Account</h3>
+			<h2>Sign in or Create Account</h2>
+			
 			<p> MetroState Animal Shelter is always in need of Volunteers. Volunteers can do many things that will directly benefit the animals in MAS' Care. Returning Volunteers are valued members of the MAS's Family. </p>
-		
-		<input type="submit" Value="Sign-in" />
-		<input type="submit" value="Create Account" />
+			<form method="POST" action="signin.html">
+				<input type="submit" Value="Sign-in" />
+			</form>
+			<form method="POST" action="createaccount.html">
+				<input type="submit" value="Create Account" />
+			</form>
 		</div>
 	
 	
@@ -53,12 +62,12 @@ Josiah Walter, and Marcus Withers -->
 	<br></br>
 	<br></br>
 	
-	<h2> Training Calendar </h2>
+	<h2 class="heading" > Training Calendar </h2>
 	<div class = "container">
 		<div class= "leftContainer">
-		<img src="april.png" alt="april"  /></div> 
+			<img src="april.png" alt="april"  /></div> 
 		<div class= "rightContainer">
-		<img src="may.png" alt="may"   /></div>
+			<img src="may.png" alt="may"   /></div>
 		</div>
 		<br></br>
 		<div class = "training_container">
@@ -82,8 +91,8 @@ Josiah Walter, and Marcus Withers -->
 	<br></br>
 	<br></br>
 	
-	<h2> Chores </h2>
-	<h3> Chores are never ending at MAS. Chores are divided by skill-level </h3>
+	<h2 class="heading"> Chores </h2>
+	<h3 class="heading"> Chores are never ending at MAS. Chores are divided by skill-level </h3>
 	<div class = "container">
 			<div class= "left_tc">
 				<ol> Level 1 Chores </ol>
@@ -108,6 +117,30 @@ Josiah Walter, and Marcus Withers -->
 	<br></br>
 	<br></br>
 	<br></br>
+	<div class="banner">
+		<h1>MetroState Shelter Loves Their Volunteers! <h1>
+	  </div>
+	  <div class = "mission">
+	  <div class = "mission1">
+		  <h1> Saves Money</h1> 
+		  <h4>More volunteers means we can spend less money on paying employees to scoop-poop</h4>
+	  </div>
+	  <div class = "mission2">
+		  <h1>Saves Time</h1>
+		  <h4>When our volunteers add their sweat-equity to the mix our employees can do more to help the animals in the shelter.</h4>
+	  </div>
+	  <div class = "mission3">
+		  <h1>Saves Animals</h1>
+		  <h4>With our employees free they can focus on providing the best care for all pets that enter the building.</h4>
+	  </div>
+  </div>
+	</body>
+	<footer class = "signin_footer">
+		<h1>We Can't Do it Without You</h1> <br>
+		<h4>Questions or any last reservations? Reach out to our Volunteer Coordinator.</h4><br><br>
+		<form method="POST" action="contactform.html">
+			<input type = "submit" value = "Contact Us"/>
+		</form>
 	<!--script for footer-->
 	<script language="javascript" type="text/javascript" 
   src="footer.txt"></script>
