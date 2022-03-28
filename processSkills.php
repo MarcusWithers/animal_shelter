@@ -47,6 +47,7 @@ echo '" has submitted a Level up Request."<br />';
 $trained = " ";
 if ($Yes == true) {
     $trained = "Yes";
+    echo "Your application is under review <br />";
 
 }
 else {
