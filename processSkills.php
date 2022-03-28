@@ -38,7 +38,7 @@ $date = date('H:i, jS F Y');
        <?php
 
 echo $_POST['FirstName'] . " " . $_POST['LastName'] . '<br />';
-echo '" has submitted a Level up Request."<br />';
+echo ' has submitted a Level up Request.<br />';
 
 ?> 
 	
@@ -61,7 +61,7 @@ echo "<p></p>";
 	
 	<?php
 
-$outputstring = $date . "\t" . $FirstName . " \t" . $LastName . " \t $"
+$outputstring = $date . "\t" . $FirstName . " \t" . $LastName . " \t "
     . $trained . "\t" . $question . "\n";
 
 // open file for appending

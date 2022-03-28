@@ -8,9 +8,9 @@
   display: block;
 }
 .headerSignOut {
-    margin-right: 0%;
-    margin-left: auto;
-    display: block;
+  margin-right: 0%;
+  margin-left: auto;
+  display: block;
 }
 .navbar {
   display: flex;
@@ -23,17 +23,15 @@
   display: inline-block;
   margin-left: 120px;
   margin-right: 20px;
-  
 }
 body {
   margin: auto;
   width: 1024px;
   height: 1024px;
-  background-image: url('backgroundcat1.jpg');
+  background-image: url("backgroundcat1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right;
-  
 }
 
 .heading {
@@ -50,8 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 512px;
-  border: 1px solid black;
-  border-radius: 15px;
+
   margin-right: 15px;
 }
 
@@ -59,8 +56,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 512px;
-  border: 1px solid black;
-  border-radius: 15px;
+
   margin-left: 15px;
 }
 
@@ -88,16 +84,12 @@ input {
   align-items: center;
   justify-content: center;
   margin-top: 75px;
-  border: 1px solid black;
-  border-radius: 15px;
 }
 
 .mission {
   display: flex;
   margin-top: 75px;
   height: 150px;
-  border: 1px solid black;
-  border-radius: 15px;
 }
 .mission1 {
   width: 341px;
@@ -121,8 +113,6 @@ footer {
   margin-top: 75px;
   height: 500px;
   justify-content: center;
-  border: 1px solid black;
-  border-radius: 15px;
 }
 
 .homepage_footer {
@@ -164,14 +154,14 @@ footer {
 }
 .photo {
   display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: stretch;
-	align-content: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
 }
-#founderTitle{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+#founderTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
