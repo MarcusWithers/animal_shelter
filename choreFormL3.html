@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <!--Insert Page Name-->
+    <title>Level Three Sign-Up</title>
+</head>
+
+<body>
+    <!--script for header-->
+    <script language="javascript" type="text/javascript" src="header.txt"></script>
+    <!--Insert Page Heading-->
+    <div class="heading">
+        <h1>Level Three Sign-Up</h1>
+    </div>
+    <br></br>
+    <!--Insert Body of Page-->
+    <div class="body" >
+        <h2>Select Your Chore Below:</h2><br/>
+        Level Three Chores: Caring for the sick, medications and treatments.
+    </div>
+    <form action="choreConfirmation.php" method="post">
+
+        <label><input type="radio" name="choreName" value="caringForTheSick">Caring for the sick</label>
+        <label><input type="radio" name="choreName" value="medications">Medications</label>
+        <label><input type="radio" name="choreName" value="treatments">Treatments</label>
+        <br><br>
+       
+        <label for="notes"> Comments about the job:</label>
+        <input type="text" id="comments" name="comments"><br><br>
+        
+        <input type="submit" value="Submit">
+</body>
+<br></br>
+<!--script for footer-->
+<script language="javascript" type="text/javascript" src="footer.txt"></script>
+<!--End Page-->
+
+</html>
