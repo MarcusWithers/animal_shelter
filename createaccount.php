@@ -60,6 +60,10 @@ src="header.txt"></script>
           <br />
           <input type="text" id="email" name="email" placeholder = "Email"/>
           <br />
+          <label for="userName">User Name:</label>
+          <br />
+          <input type="text" id="userName" name="userName" placeholder ="User Name" />
+          <br />
           <label for="phone_number">Phone Number:</label>
           <br />
           <input type="text" id="phone_number" name="phone_number" placeholder ="Phone Number" />
