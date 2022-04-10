@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="styles.css" />
     <!--Insert Page Name-->
     <title>Chore Results</title>
-</head>
+    </head>
 
+
+<br></br>
 <body>
     <!--script for header-->
     <script language="javascript" type="text/javascript" src="header.txt"></script>

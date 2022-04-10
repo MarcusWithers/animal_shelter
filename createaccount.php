@@ -11,8 +11,8 @@
 <!--script for header-->
 <script language="javascript" type="text/javascript" 
 src="header.txt"></script>
-
-  <body>
+<br></br>
+<body>
   
     <!--Insert Page Heading-->
       <div class = "heading">

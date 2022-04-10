@@ -10,7 +10,8 @@
     <title>Chore Sign-Up Confirmation</title>
 </head>
 
-<body>
+  <br></br>
+  <body>
     <!--script for header-->
     <script language="javascript" type="text/javascript" src="header.txt"></script>
     <!--Insert Page Heading-->

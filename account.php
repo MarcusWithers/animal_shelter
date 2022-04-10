@@ -9,11 +9,12 @@
     <!--Insert Page Name-->
     <title>Account Page</title>
 </head>
-
-<body>
   <!--script for header-->
 <script language="javascript" type="text/javascript" 
   src="header.txt"></script>
+ 
+  <br></br>
+  <body>
   <div class="heading">
       <h1>Welcome Back User! </h1> <br>
       <!--User will be dynamically created-->
@@ -48,7 +49,7 @@
   <h2> To apply for higher skill jobs, fill out the form below </h2>
   <div class="contact_container">
       <form action="processSkills.php" method="POST" >
-      <fieldset>
+      
    
    <legend>Personal Information</legend>
    <div class="form-example">
@@ -74,7 +75,7 @@
           <input type="text" id="address" name="address" placeholder ="Address" />
           <br />   <br></br>	
    </div>
-</fieldset>
+
           <label for ="levels">What skill level would you like to apply for?</label><br>
         <select name = "levels">
             <option value = "level1"> Level 1</option>
