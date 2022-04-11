@@ -17,7 +17,7 @@
     <script language="javascript" type="text/javascript" src="header.txt"></script>
     <!--Insert Page Heading-->
     <div class="heading">
-        <h1>Previous Chore Results </h1>
+        <h1>Volunteer Contact List</h1>
      </div>
     <br></br>
     <!--Insert Body of Page-->
