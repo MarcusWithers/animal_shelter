@@ -66,7 +66,7 @@ src="header.txt"></script>
           <br />
           <label for="phone_number">Phone Number:</label>
           <br />
-          <input type="text" id="phone_number" name="phone_number" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
+          <input type="text" id="phone_number" name="phone_number" placeholder="123-45-6789" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
           <br />
           <label for="address">Address:</label>
           <br />
