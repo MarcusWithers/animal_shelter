@@ -35,8 +35,23 @@
       <!--Chorse will be dynamically created-->
   </ol> 
 </div>
-</div>
+</div><h2> <element class="photo">Change Your Password: </h2>
+<div class="contact_container">
+  
+      <form action="changePassword.php" method="GET">
+        <label for="username">Username:</label><br />
+        <input type="text" name="username" placeholder="Username" /><br />
+        <label for="password">Password:</label><br />
+        <input type="text" name="password" placeholder="Password" /> <br />
+        <label for="newPassword">New Password:</label><br />
+        <input type="text" name="newPassword" placeholder="New Password" /> <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+
 <br><br>
+
 <h2> To view previous chores select below </h2>
 <div>
   <form action="choreResults.php" method="GET">
