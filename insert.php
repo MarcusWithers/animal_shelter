@@ -22,11 +22,11 @@
     <div class="body" >
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$database = "metrostate animal shelter";
+$username = "ics325sp2203";
+$password = "7846";
+$database = "ics325sp2203";
 // connection
-$db = new mysqli("localhost", $username, $password, $database);
+$db = new mysqli($servername, $username, $password, $database);
 
 if ($db->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -36,10 +36,11 @@ echo "New Account under Review";
 $full_name = $_REQUEST['full_name'];
 $email = $_REQUEST['email'];
 $userName = $_REQUEST['userName'];
+$userPassword = $_REQUEST['password'];
 $phone_number = $_REQUEST['phone_number'];
 $address = $_REQUEST['address'];
 
-$sql = "INSERT INTO volunteer (VolunteerName, userName, Email, PhoneNumber, MailingAddress) VALUES ('$full_name', '$userName', '$email','$phone_number', '$address')";
+$sql = "INSERT INTO volunteer (VolunteerName, userName, Email, Password, PhoneNumber, MailingAddress) VALUES ('$full_name', '$userName', '$email', '$userPassword', '$phone_number', '$address')";
 
 if (mysqli_query($db, $sql)) {
     echo "<h3>Please contact us if the information below is inaccurate";

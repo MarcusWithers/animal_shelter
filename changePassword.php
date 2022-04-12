@@ -24,11 +24,11 @@
     <div class="body" >
     <?php
       $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $database = "metrostate animal shelter";
+      $username = "ics325sp2203";
+      $password = "7846";
+      $database = "ics325sp2203";
       // connection
-      $db = new mysqli("localhost", $username, $password, $database);
+      $db = new mysqli($servername, $username, $password, $database);
       
       if ($db->connect_error) {
           die("Connection failed: " . $conn->connect_error);

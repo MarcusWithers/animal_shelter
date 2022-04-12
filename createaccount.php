@@ -64,9 +64,13 @@ src="header.txt"></script>
           <br />
           <input type="text" id="userName" name="userName" placeholder ="User Name" />
           <br />
+          <label for="password">Password:</label>
+          <br />
+<input type="text" id="password" name="password" placeholder ="Enter a Password" />
+<br />
           <label for="phone_number">Phone Number:</label>
           <br />
-          <input type="text" id="phone_number" name="phone_number" placeholder="123-45-6789" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
+          <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
           <br />
           <label for="address">Address:</label>
           <br />
