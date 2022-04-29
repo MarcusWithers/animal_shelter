@@ -7,18 +7,38 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Sign-in</title>
   </head>
-  
-<!--script for header-->
-    <script language="javascript" type="text/javascript" 
-  src="header.txt"></script>
- 
-    <body>
+  <header>
+	<img src="logo.png" alt="pawprintlogo" />
+		<div class = "navbar">
+			<nav class = "navbar">
+			<ol>
+      <li class = "nav"><a href = "home.php">Home</a></li>
+                <?php
+                    if (isset($_SESSION["volunteerId"])){
+                        echo "<li class = 'nav'><a href = 'account.php'> Profile</a></li>";
+                        echo "<li class = 'nav'><a href = 'chorehomepage.html'>Chores</a></li>";
+                        echo "<li class = 'nav'><a href = 'logout.php.html'> Log out</a></li>";
+                    }
+                    else{
+                        echo "<li class= 'nav'><a href = 'createaccount.php'> Create An Account </a></li>";
+                        echo "<li class= 'nav'><a href = 'login.php'> Log In </a></li>";
+
+                    }
+                ?>
+				
+				<li class = "nav"><a href = "aboutUs.html">About Us</a></li>
+				<li class = "nav"><a href = "contactform.html">Contact Page</a></li>
+			</ol>
+			</nav>
+		</div>
+  </header> 
+     <body>
     
       <!--Insert Page Heading-->
     <div class = "heading">
-    <h1>Sign-in</h1><br><br>
-    <h2>Sign Into Your Volunteer Account</h2>
-</div>
+      <h1>Sign-in</h1><br><br>
+      <h2>Sign Into Your Volunteer Account</h2>
+    </div>
     <div class="container">
       <div class="left_container">
         <img src="dog.jpg" alt="dog" width="500px" />
@@ -47,21 +67,35 @@
         </ol>
       </div>
       <div class="right_container">
-        <form action="#">
+        <form method="POST" action="logIn.php">
           <h2>Existing Volunteers</h2>
           <br />
           <h4>Sign-in Below</h4>
           <br /><br /><br />
-          <label for="fullname">Email Address:</label>
+          
+          <label for="email">email or username:</label>
           <br />
-          <input type="text" id="fullname" name="fullname" placeholder = "Email"/>
+          <input type="text"  name="userName" placeholder = "UserName or Email"/>
           <br />
-          <label for="email">Password:</label>
+          <label for="password">Password:</label>
           <br />
-          <input type="text" id="email" name="email" placeholder = "Password"/>
+          <input type="password" id="password" name="userPassword" placeholder = "Password"/>
           <br />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="submit" />
         </form>
+
+          <?php
+          
+          if(isset($_GET["error"])){
+            if($_GET["error"] == "emptyinput") {
+              echo "<p>Fill in all fields </p>";
+            }
+              else if($_GET["error"] == "wronglogin") {
+                echo "<p>Incorrect Login </p>";
+              }
+            }
+          ?>
+
         <h3>
           "The kittens are my favorite part at MetroState Animal Shelter."
         </h3>
@@ -93,15 +127,16 @@
         <h4>With our employees free they can focus on providing the best care for all pets that enter the building.</h4>
     </div>
 </div>
-  </body>
+</body>
   <footer class = "signin_footer">
       <h1>We Can't Do it Without You</h1> <br>
       <h4>Questions or any last reservations? Reach out to our Volunteer Coordinator.</h4><br><br>
       <form method="POST" action="contactform.html">
           <input type = "submit" value = "Contact Us"/>
       </form>
-  </footer>
-  <!--script for footer-->
-  <script language="javascript" type="text/javascript" 
-  src="footer.txt"></script>
+            </footer>
+            <div>
+<!--script for footer-->
+<script language="javascript" type="text/javascript" src="footer.txt"></script>
+            </div>
 </html>

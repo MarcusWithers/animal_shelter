@@ -9,15 +9,45 @@
     <!--Insert Page Name-->
     <title>Account Page</title>
 </head>
-  <!--script for header-->
-<script language="javascript" type="text/javascript" 
-  src="header.txt"></script>
+<header>
+	<img src="logo.png" alt="pawprintlogo" />
+		<div class = "navbar">
+			<nav class = "navbar">
+			<ol>
+				<li class = "nav"><a href = "home.php">Home</a></li>
+                <?php
+                    if (isset($_SESSION["volunteerId"])){
+                        echo "<li class = 'nav'><a href = 'account.php'> Profile</a></li>";
+                        echo "<li class = 'nav'><a href = 'chorehomepage.html'>Chores</a></li>";
+                        echo "<li class = 'nav'><a href = 'logout.php.html'> Log out</a></li>";
+                    }
+                    else{
+                        echo "<li class= 'nav'><a href = 'createaccount.php'> Create An Account </a></li>";
+                        echo "<li class= 'nav'><a href = 'login.php'> Log In </a></li>";
+
+                    }
+                ?>
+				
+				<li class = "nav"><a href = "aboutUs.html">About Us</a></li>
+				<li class = "nav"><a href = "contactform.html">Contact Page</a></li>
+			</ol>
+			</nav>
+		</div>
+  </header>
  
   <br></br>
   <body>
   <div class="heading">
       <h1>Welcome Back User! </h1> <br>
       <!--User will be dynamically created-->
+      <?php
+
+if (isset($_SESSION["volunteerId"])){
+  echo "<p> Welcome back" . $_SESSION["volunteerId"] ."</p>";
+  
+}
+
+      ?>
     </div>
     <br></br>
     <!--Insert Body of Page-->

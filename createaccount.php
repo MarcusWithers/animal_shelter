@@ -7,10 +7,31 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Create Account</title>
   </head>
-   
-<!--script for header-->
-<script language="javascript" type="text/javascript" 
-src="header.txt"></script>
+  <header>
+	<img src="logo.png" alt="pawprintlogo" />
+		<div class = "navbar">
+			<nav class = "navbar">
+			<ol>
+				<li class = "nav"><a href = "home.php">Home</a></li>
+                <?php
+                    if (isset($_SESSION["volunteerId"])){
+                        echo "<li class = 'nav'><a href = 'account.php'> Profile</a></li>";
+                        echo "<li class = 'nav'><a href = 'chorehomepage.html'>Chores</a></li>";
+                        echo "<li class = 'nav'><a href = 'logout.php.html'> Log out</a></li>";
+                    }
+                    else{
+                        echo "<li class= 'nav'><a href = 'createaccount.php'> Create An Account </a></li>";
+                        echo "<li class= 'nav'><a href = 'login.php'> Log In </a></li>";
+
+                    }
+                ?>
+				
+				<li class = "nav"><a href = "aboutUs.html">About Us</a></li>
+				<li class = "nav"><a href = "contactform.html">Contact Page</a></li>
+			</ol>
+			</nav>
+		</div>
+  </header>
 <br></br>
 <body>
   
@@ -47,7 +68,7 @@ src="header.txt"></script>
         </ol>
       </div>
       <div class="right_container">
-        <form action="insert.php" method="POST">
+        <form action="signOn.php" method="POST">
           <h2>New Volunteers</h2>
           <br />
           <h4>Once approved you can begin to volunteer</h4>
@@ -66,8 +87,12 @@ src="header.txt"></script>
           <br />
           <label for="password">Password:</label>
           <br />
-<input type="text" id="password" name="password" placeholder ="Enter a Password" />
-<br />
+          <input type="password" id="password" name="password" placeholder ="Enter a Password" />
+          <br />
+          <label for="pwdrepeat">Retype Password:</label>
+          <br />
+          <input type="password" id="pwdrepeat" name="pwdrepeat" placeholder ="Retype Password" />
+          <br />
           <label for="phone_number">Phone Number:</label>
           <br />
           <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
@@ -85,8 +110,36 @@ src="header.txt"></script>
             <option value="playing">Playing</option>
           </select>
           <br />
-          <input type="submit" value="Create Account" />
+          <input type="submit" name="submit"> </>
         </form>
+        <?php
+           
+           if(isset($_GET["error"])){
+              if($_GET["error"] == "emptyinput") {
+                echo"<p>Fill in all fields</p?";
+              }
+                else if($_GET["error"] == "invalidusername") {
+                  echo "<p>Choose another username </p>";
+                }
+                else if($_GET["error"] == "invalidemail") {
+                  echo "<p>Enter a proper email address </p>";
+                }
+                else if($_GET["error"] == "passwordmatcherror") {
+                  echo "<p>Passwords must match </p>";
+                }
+                else if($_GET["error"] == "stmtfailed") {
+                  echo "<p>Something went wrong. Try again. </p>";
+                }
+                else if($_GET["error"] == "usernametaken") {
+                  echo "<p>Choose another username </p>";
+                }
+                else if($_GET["error"] == "none") {
+                  echo "<p>You have signed up </p>";
+                }
+           }
+
+        ?>
+        
         <h3>
           "Add a volunteer testimonial to increase conversions to your landing
           page."
@@ -121,11 +174,11 @@ src="header.txt"></script>
 </div>
   </body>
   <footer class = "signin_footer">
-      <h1>We Can't Do it Without You</h1> <br>
-      <h4>Questions or any last reservations? Reach out to our Volunteer Coordinator.</h4><br><br>
-      <form action = "#">
-          <input type = "submit" value = "CALL TO ACTION "/>
-      </form>
+		<h1>We Can't Do it Without You</h1> <br>
+		<h4>Questions or any last reservations? Reach out to our Volunteer Coordinator.</h4><br><br>
+		<form method="POST" action="contactform.html">
+			<input type = "submit" value = "Contact Us"/>
+		</form>
   </footer>
   <!--script for footer-->
   <script language="javascript" type="text/javascript" 

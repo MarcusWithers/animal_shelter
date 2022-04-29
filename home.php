@@ -3,6 +3,10 @@ Project Part 2 due 3/28/2022
 Group 6 Authors: Crystal Backlund, 
 Josiah Walter, and Marcus Withers -->
 
+<?php
+ session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,25 +16,33 @@ Josiah Walter, and Marcus Withers -->
     <link rel="stylesheet" href="styles.css" />
     <title>MetroState Animal Shelter Volunteer Home Page</title>
   </head>
-  <!--No header script due to differences with sign on vs sign off-->
-  <header>
-	
-	<form method="POST" action="signin.html">
-		<input class="headerSignOn" type="submit" Value="Sign-in" />
-	</form>
+
+<header>
 	<img src="logo.png" alt="pawprintlogo" />
 		<div class = "navbar">
 			<nav class = "navbar">
 			<ol>
 				<li class = "nav"><a href = "home.html">Home</a></li>
-				<li class = "nav"><a href = "account.php">Profile</a></li>
-				<li class = "nav"><a href = "chorehomepage.html">Chores</a></li>
+                <?php
+                    if (isset($_SESSION["volunteerId"])){
+                        echo "<li class = 'nav'><a href = 'account.php'> Profile</a></li>";
+                        echo "<li class = 'nav'><a href = 'chorehomepage.html'>Chores</a></li>";
+                        echo "<li class = 'nav'><a href = 'logout.php.html'> Log out</a></li>";
+                    }
+                    else{
+                        echo "<li class= 'nav'><a href = 'createaccount.php'> Create An Account </a></li>";
+                        echo "<li class= 'nav'><a href = 'login.php'> Log In </a></li>";
+
+                    }
+                ?>
+				
 				<li class = "nav"><a href = "aboutUs.html">About Us</a></li>
 				<li class = "nav"><a href = "contactform.html">Contact Page</a></li>
 			</ol>
 			</nav>
 		</div>
   </header>
+
   <br></br>
   <body>
     
@@ -51,7 +63,7 @@ Josiah Walter, and Marcus Withers -->
 			<p>Whether you are walking dogs, socializing cats or performing yard clean-up, you help make lives better for pets and people. We value not only the time you are able to give us, but also your support of our important mission.</p>
 			<br></br>
 			<br></br>
-			<form method="POST" action="signin.html">
+			<form method="POST" action="signin.php">
 				<input type="submit" Value="Sign-in" />
 			</form>
 			<form method="POST" action="createaccount.php">
@@ -150,8 +162,7 @@ Josiah Walter, and Marcus Withers -->
 		<form method="POST" action="contactform.html">
 			<input type = "submit" value = "Contact Us"/>
 		</form>
-	<!--script for footer-->
-	<script language="javascript" type="text/javascript" 
-  src="footer.txt"></script>
-	</body>
-	</html>
+<!--script for footer-->
+<script language="javascript" type="text/javascript" src="footer.txt"></script>
+<!--End Page-->
+</html>
