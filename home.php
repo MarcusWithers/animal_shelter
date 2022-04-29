@@ -22,7 +22,7 @@ Josiah Walter, and Marcus Withers -->
 		<div class = "navbar">
 			<nav class = "navbar">
 			<ol>
-				<li class = "nav"><a href = "home.html">Home</a></li>
+				<li class = "nav"><a href = "home.php">Home</a></li>
                 <?php
                     if (isset($_SESSION["volunteerId"])){
                         echo "<li class = 'nav'><a href = 'account.php'> Profile</a></li>";
