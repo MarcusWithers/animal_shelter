@@ -23,7 +23,9 @@
   display: inline-block;
   margin-left: 120px;
   margin-right: 20px;
+  
 }
+
 body {
   margin: auto;
   width: 1024px;
@@ -43,6 +45,7 @@ body {
 }
 .container {
   display: flex;
+  border-bottom: thick double #000080;
 }
 .left_container {
   display: flex;
@@ -84,6 +87,10 @@ input {
   align-items: center;
   justify-content: center;
   margin-top: 75px;
+  border-bottom: thick double #000080;
+}
+.aboutbody{
+  border-bottom: thick double #000080;
 }
 
 .mission {
@@ -92,15 +99,23 @@ input {
   height: 150px;
 }
 .mission1 {
-  width: 341px;
+  width: 300px;
+  text-align: justify;
+  justify-content: center;
+  padding-right: 15px;
 }
 
 .mission2 {
-  width: 341px;
+  width: 300px;
+  text-align: justify;
+  padding-right: 15px;
+
 }
 
 .mission3 {
-  width: 341px;
+  width: 300px;
+  text-align: justify;
+  justify-content: center;
 }
 
 footer {

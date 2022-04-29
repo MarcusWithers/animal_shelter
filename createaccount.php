@@ -11,8 +11,8 @@
 <!--script for header-->
 <script language="javascript" type="text/javascript" 
 src="header.txt"></script>
-
-  <body>
+<br></br>
+<body>
   
     <!--Insert Page Heading-->
       <div class = "heading">
@@ -47,18 +47,34 @@ src="header.txt"></script>
         </ol>
       </div>
       <div class="right_container">
-        <form action="#">
+        <form action="insert.php" method="POST">
           <h2>New Volunteers</h2>
           <br />
           <h4>Once approved you can begin to volunteer</h4>
           <br /><br /><br />
-          <label for="fullname">Your Full Name:</label>
+          <label for="full_name">Your Full Name:</label>
           <br />
-          <input type="text" id="fullname" name="fullname" placeholder ="Full Name" />
+          <input type="text" id="full_name" name="full_name" placeholder ="Full Name" />
           <br />
           <label for="email">Email Address:</label>
           <br />
           <input type="text" id="email" name="email" placeholder = "Email"/>
+          <br />
+          <label for="userName">User Name:</label>
+          <br />
+          <input type="text" id="userName" name="userName" placeholder ="User Name" />
+          <br />
+          <label for="password">Password:</label>
+          <br />
+<input type="text" id="password" name="password" placeholder ="Enter a Password" />
+<br />
+          <label for="phone_number">Phone Number:</label>
+          <br />
+          <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+          <br />
+          <label for="address">Address:</label>
+          <br />
+          <input type="text" id="address" name="address" placeholder ="Address" />
           <br />
           <label for="interests">What are you interested in?</label>
           <br />
@@ -69,7 +85,7 @@ src="header.txt"></script>
             <option value="playing">Playing</option>
           </select>
           <br />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Create Account" />
         </form>
         <h3>
           "Add a volunteer testimonial to increase conversions to your landing

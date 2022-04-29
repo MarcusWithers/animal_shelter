@@ -9,11 +9,12 @@
     <!--Insert Page Name-->
     <title>Account Page</title>
 </head>
-
-<body>
   <!--script for header-->
 <script language="javascript" type="text/javascript" 
   src="header.txt"></script>
+ 
+  <br></br>
+  <body>
   <div class="heading">
       <h1>Welcome Back User! </h1> <br>
       <!--User will be dynamically created-->
@@ -34,27 +35,62 @@
       <!--Chorse will be dynamically created-->
   </ol> 
 </div>
+</div><h2> <element class="photo">Change Your Password: </h2>
+<div class="contact_container">
+  
+      <form action="changePassword.php" method="GET">
+        <label for="username">Username:</label><br />
+        <input type="text" name="username" placeholder="Username" /><br />
+        <label for="password">Password:</label><br />
+        <input type="text" name="password" placeholder="Password" /> <br />
+        <label for="newPassword">New Password:</label><br />
+        <input type="text" name="newPassword" placeholder="New Password" /> <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+
+<br><br>
+
+<h2> To view previous chores select below </h2>
+<div>
+  <form action="choreResults.php" method="GET">
+  <input type="submit" value="Go to Chores" />
+</form>
 </div>
+
+
   <br><br>
   <h2> To apply for higher skill jobs, fill out the form below </h2>
   <div class="contact_container">
       <form action="processSkills.php" method="POST" >
-      <fieldset>
+      
    
    <legend>Personal Information</legend>
    <div class="form-example">
    <br></br>
-   <label for="First Name" >First Name: </label>
-     <input type="text" name="FirstName" id="First Name" maxlength="15" placeholder="First Name"  spellcheck="false" title="Enter the First Name" required />
-     
-   <label for="Last Name" >Last Name: </label>
-     <input type="text" name="LastName" id="Last Name" maxlength="25" placeholder="Last Name"  spellcheck="false" title="Enter the Last Name" required />
-   <br></br>
-   <label for="Address" >Address: </label>
-     <input type="text" name="Address" id="Address" placeholder="1234 Street Avenue, City, State, Zip"  spellcheck="false" title="Address" required />
-   <br></br>	
+   <label for="full_name">Your Full Name:</label>
+          <br />
+          <input type="text" id="full_name" name="full_name" placeholder ="Full Name" />
+          <br />
+          <label for="email">Email Address:</label>
+          <br />
+          <input type="text" id="email" name="email" placeholder = "Email"/>
+          <br />
+          <label for="userName">User Name:</label>
+          <br />
+          <input type="text" id="userName" name="userName" placeholder ="User Name" />
+          <br />
+          <label for="phone_number">Phone Number:</label>
+          <br />
+          <input type="text" id="phone_number" name="phone_number" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
+          <br />
+          <label for="address">Address:</label>
+          <br />
+          <input type="text" id="address" name="address" placeholder ="Address" />
+          <br />   <br></br>	
    </div>
-</fieldset>
+
           <label for ="levels">What skill level would you like to apply for?</label><br>
         <select name = "levels">
             <option value = "level1"> Level 1</option>
