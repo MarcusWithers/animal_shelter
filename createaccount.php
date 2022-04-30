@@ -87,6 +87,10 @@ src="header.txt"></script>
           <br />
           <input type="submit" value="Create Account" />
         </form>
+        <form action = "signin.html" method = "POST">
+          <h2> Already have an account? Sign in below! </h2>
+          <input type = "submit" value = "Sign in" />
+        </form>
         <h3>
           "Add a volunteer testimonial to increase conversions to your landing
           page."
