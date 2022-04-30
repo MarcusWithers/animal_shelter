@@ -42,7 +42,7 @@ $userpassword = $_REQUEST['password'];
 $phone_number = $_REQUEST['phone_number'];
 $address = $_REQUEST['address'];
 
-$hash = password_hash($password, PASSWORD_DEFAULT);
+$hash = password_hash($userpassword, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO accounts (name, username, email, password, phonenumber, mailingaddress) VALUES ('$full_name', '$username', '$email', '$hash', '$phone_number', '$address')";
 //$sql = "INSERT INTO volunteer (VolunteerName, userName, Email, Password, PhoneNumber, MailingAddress) VALUES ('$full_name', '$userName', '$email', '$userPassword', '$phone_number', '$address')";
