@@ -60,9 +60,9 @@ src="header.txt"></script>
           <br />
           <input type="text" id="email" name="email" placeholder = "Email"/>
           <br />
-          <label for="userName">User Name:</label>
+          <label for="username">User Name:</label>
           <br />
-          <input type="text" id="userName" name="userName" placeholder ="User Name" />
+          <input type="text" id="username" name="username" placeholder ="User Name" />
           <br />
           <label for="password">Password:</label>
           <br />

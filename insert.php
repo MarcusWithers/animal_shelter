@@ -21,10 +21,11 @@
     <!--Insert Body of Page-->
     <div class="body" >
 <?php
+session_start();
 $servername = "localhost";
-$username = "ics325sp2203";
-$password = "7846";
-$database = "ics325sp2203";
+$username = "root";
+$password = "";
+$database = "metropolitan state animal shelter";
 // connection
 $db = new mysqli($servername, $username, $password, $database);
 
@@ -33,18 +34,22 @@ if ($db->connect_error) {
 }
 echo "New Account under Review";
 
+
 $full_name = $_REQUEST['full_name'];
 $email = $_REQUEST['email'];
-$userName = $_REQUEST['userName'];
-$userPassword = $_REQUEST['password'];
+$username = $_REQUEST['username'];
+$userpassword = $_REQUEST['password'];
 $phone_number = $_REQUEST['phone_number'];
 $address = $_REQUEST['address'];
 
-$sql = "INSERT INTO volunteer (VolunteerName, userName, Email, Password, PhoneNumber, MailingAddress) VALUES ('$full_name', '$userName', '$email', '$userPassword', '$phone_number', '$address')";
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
+$sql = "INSERT INTO accounts (name, username, email, password, phonenumber, mailingaddress) VALUES ('$full_name', '$username', '$email', '$hash', '$phone_number', '$address')";
+//$sql = "INSERT INTO volunteer (VolunteerName, userName, Email, Password, PhoneNumber, MailingAddress) VALUES ('$full_name', '$userName', '$email', '$userPassword', '$phone_number', '$address')";
 
 if (mysqli_query($db, $sql)) {
     echo "<h3>Please contact us if the information below is inaccurate";
-    echo nl2br("\n$full_name\n $userName\n $email\n" . "$phone_number\n$address");
+    echo nl2br("\n$full_name\n $username\n $email\n" . "$phone_number\n$address");
 
 }
 else {
@@ -58,7 +63,7 @@ mysqli_close($db);
 		</form>
 <?php
 //create file for volunteer coordinator
-$outputstring = $full_name . " \t" . $userName . " \t "
+$outputstring = $full_name . " \t" . $username . " \t "
     . $email . "\t" . $phone_number . "\t" . $address . "\n";
 
 // open file for appending

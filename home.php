@@ -2,7 +2,13 @@
 Project Part 2 due 3/28/2022
 Group 6 Authors: Crystal Backlund, 
 Josiah Walter, and Marcus Withers -->
-
+<?php
+session_start();
+if(!isset($_SESSION['loggedin'])){
+	header('Location: signin.html');
+	exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +28,7 @@ Josiah Walter, and Marcus Withers -->
 		<div class = "navbar">
 			<nav class = "navbar">
 			<ol>
-				<li class = "nav"><a href = "home.html">Home</a></li>
+				<li class = "nav"><a href = "home.php">Home</a></li>
 				<li class = "nav"><a href = "account.php">Profile</a></li>
 				<li class = "nav"><a href = "chorehomepage.html">Chores</a></li>
 				<li class = "nav"><a href = "aboutUs.html">About Us</a></li>
