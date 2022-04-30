@@ -43,6 +43,7 @@ if(!isset($_SESSION['loggedin'])){
     <!--Insert Page Heading-->
     <div class="heading">
         <h1>Welcome Volunteers </h1>
+		<h1>Welcome back, <?=$_SESSION['name']?>!</h1>
     </div>
     <br></br>
     <!--Insert Body of Page-->
