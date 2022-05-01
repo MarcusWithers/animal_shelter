@@ -4,11 +4,11 @@ if (!isset($_SESSION['loggedin'])) {
 	header('Location: signin.html');
 	exit;
 }
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
-$DATABASE_NAME = 'metropolitan state animal shelter';
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+$servername = "localhost";
+$username = "ics325sp2203";
+$password = "7846";
+$database = "ics325sp2203";
+$con = mysqli_connect($servername, $username, $password, $database);
 if (mysqli_connect_errno()) {
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }

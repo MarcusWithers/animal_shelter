@@ -10,7 +10,6 @@
     <title>Change Password</title>
     </head>
 
-
 <br></br>
 <body>
     <!--script for header-->
@@ -38,16 +37,18 @@
        $userfield =  $_REQUEST["username"];
        $oldPassword = $_REQUEST["password"];
        $newPassword = $_REQUEST["newPassword"];
-       $query = "SELECT userName, Password FROM volunteer WHERE userName='$userfield'";
+       $query = "SELECT username, Password FROM accounts WHERE username='$userfield'";
        $result = mysqli_query($db, $query);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo "<br> Name: ". $row["userName"]. " Password: ". $row["Password"]."<br>";
-        if($row["userName"] == $userfield && $row["Password"] == $oldPassword){
+        echo "<br> Name: ". $row["username"]. " Password: ". $row["Password"]."<br>";
+        // (password_verify($_POST['password'], $newPassword))
+        if (password_verify($_POST['password'], $newPassword)){
+        // ($row["username"] == $userfield && $row["Password"] == $oldPassword)
             echo "Match: ";
-            $sqlUpdate = "UPDATE volunteer SET Password='$newPassword' WHERE userName='$userfield'";
+            $sqlUpdate = "UPDATE accounts SET Password='$newPassword' WHERE username='$userfield'";
             if ($db->query($sqlUpdate) === TRUE) {
                 echo "Password Changed Successfully";
               } else {

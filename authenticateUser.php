@@ -1,12 +1,12 @@
 <?php
 session_start();
 // Change this to your connection info.
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
-$DATABASE_NAME = 'metropolitan state animal shelter';
+$servername = "localhost";
+$username = "ics325sp2203";
+$password = "7846";
+$database = "ics325sp2203";
 // Try and connect using the info above.
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+$con = mysqli_connect($servername, $username, $password, $database);
 if ( mysqli_connect_errno() ) {
 	// If there is an error with the connection, stop the script and display the error.
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());

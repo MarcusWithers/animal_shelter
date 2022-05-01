@@ -23,9 +23,9 @@
 <?php
 session_start();
 $servername = "localhost";
-$username = "root";
-$password = "";
-$database = "metropolitan state animal shelter";
+$username = "ics325sp2203";
+$password = "7846";
+$database = "ics325sp2203";
 // connection
 $db = new mysqli($servername, $username, $password, $database);
 

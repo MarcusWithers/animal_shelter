@@ -35,13 +35,13 @@
         }
         //echo "Successfully connected to database";
        //MySQL Query to read data
-       $query = "SELECT VolunteerName, Email, PhoneNumber, VolunteerLevel FROM volunteer ORDER BY VolunteerLevel DESC";
+       $query = "SELECT name, email, phonenumber, volunteerlevel FROM accounts ORDER BY volunteerlevel DESC";
        $result = mysqli_query($db, $query);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo "<br> Level: ". $row["VolunteerLevel"]. " Name: ". $row["VolunteerName"]. " Phone: " . $row["PhoneNumber"] . " email: " . $row["Email"] . "<br>";
+        echo "<br> Level: ". $row["volunteerlevel"]. " Name: ". $row["name"]. " Phone: " . $row["phonenumber"] . " Email: " . $row["email"] . "<br>";
     }
 } else {
     echo "0 results";
