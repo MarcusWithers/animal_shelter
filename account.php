@@ -142,9 +142,9 @@ $stmt->close();
         <br>
         <p>
 Did you take the required course?
-	<input type= "radio" name="Yes" id= "Yes" value="Yes"/>
+	<input type= "radio" name="choice" id= "Yes" value="Yes"/>
 		<label for="Yes" > Yes </label>
-	<input type= "radio" name ="No" id ="No" value="No"/>
+	<input type= "radio" name ="choice" id ="No" value="No"/>
 		<label for="No" > No  </label>
 </p>
         <label for="question">Why should we increase your level?</label><br />
