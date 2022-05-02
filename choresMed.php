@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+  echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +25,7 @@
     <!--Insert Page Heading-->
     <div class="heading">
     <br/><br/>
-        <h1> How to Care for the Sick and Injured</h1>
+        <h1> How to Administer Meds</h1>
     </div>
     <br></br>
     <!--Insert Body of Page-->
@@ -26,12 +35,19 @@
         <h3>How to help </h3>
         <br>
         
-        <p>Washing your hands between each animal, give each one a little 'out of kennel time' as well as any attention they may want.
-            This may mean no physical connect or lap snuggling on the chair. Allow each animal to perform whatever activity they feel like it during their TLC time </p>
+        <p>Washing your hands between each animal,  Go through the medications on their kennels and give the appropriate dose and route. </p>
+            <ol>Remember the 5 R's: </ol>
+                <li>Right Patient</li>
+                <li>Right Medication</li> 
+                <li>Right Dose</li>
+                <li>Right Time</li>
+                <li>Right Route</li>
+                
+
         <br></br>
     </div>
     <div class="banner">
-		<h1>Thank you for TLC! <h1>
+		<h1>Thank you for Medications! <h1>
 	  </div>
       <br/><br/>
       <div>

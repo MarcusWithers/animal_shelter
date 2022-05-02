@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+  echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +25,7 @@
     <!--Insert Page Heading-->
     <div class="heading">
     <br/><br/>
-        <h1> How to Administer Meds</h1>
+        <h1> How to Treat Sick Animals</h1>
     </div>
     <br></br>
     <!--Insert Body of Page-->
@@ -26,19 +35,19 @@
         <h3>How to help </h3>
         <br>
         
-        <p>Washing your hands between each animal,  Go through the medications on their kennels and give the appropriate dose and route. </p>
-            <ol>Remember the 5 R's: </ol>
-                <li>Right Patient</li>
-                <li>Right Medication</li> 
-                <li>Right Dose</li>
-                <li>Right Time</li>
-                <li>Right Route</li>
+        <p>Washing your hands between each animal,  Go through the treatments on their kennels and give the appropriate care. </p>
+            <ol> Some animals may need: </ol>
+                <li>Nebulization</li>
+                <li>SQ Fluids</li> 
+                <li>Physical Therapy</li>
+                <li>Special Handling</li>
+                <li>Massage/Joint Care</li>
                 
 
         <br></br>
     </div>
     <div class="banner">
-		<h1>Thank you for Medications! <h1>
+		<h1>Thank you for the Treatments! <h1>
 	  </div>
       <br/><br/>
       <div>
