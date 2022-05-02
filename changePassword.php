@@ -16,6 +16,7 @@
     <script language="javascript" type="text/javascript" src="header.txt"></script>
     <!--Insert Page Heading-->
     <div class="heading">
+        <br/><br/>
         <h1>Change Password</h1>
      </div>
     <br></br>
@@ -45,10 +46,11 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         echo "<br> Name: ". $row["username"]. " Password: ". $row["Password"]."<br>";
         // (password_verify($_POST['password'], $newPassword))
-        if (password_verify($_POST['password'], $newPassword)){
+        if (password_verify($oldPassword, $row["Password"])){
         // ($row["username"] == $userfield && $row["Password"] == $oldPassword)
             echo "Match: ";
-            $sqlUpdate = "UPDATE accounts SET Password='$newPassword' WHERE username='$userfield'";
+            $hash = password_hash($newPassword, PASSWORD_DEFAULT);
+            $sqlUpdate = "UPDATE accounts SET Password='$hash' WHERE username='$userfield'";
             if ($db->query($sqlUpdate) === TRUE) {
                 echo "Password Changed Successfully";
               } else {

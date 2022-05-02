@@ -17,39 +17,45 @@
     <script language="javascript" type="text/javascript" src="header.txt"></script>
     <!--Insert Page Heading-->
     <div class="heading">
+        <br/><br/>
         <h1>Previous Chore Results </h1>
      </div>
-    <br></br>
+    </br>
     <!--Insert Body of Page-->
     <div class="body" >
     <?php
-      $servername = "localhost";
-      $username = "ics325sp2203";
-      $password = "7846";
-      $database = "ics325sp2203";
-      // connection
-      $db = new mysqli($servername, $username, $password, $database);
-      
-      if ($db->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-        }
-        //echo "Successfully connected to database";
-       //MySQL Query to read data
-       $query = "SELECT ChoreName, ChoreDate, ChoreNotes FROM chore ORDER BY ChoreDate DESC";
-       $result = mysqli_query($db, $query);
-
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "<br> Date: ". $row["ChoreDate"]. " Name: ". $row["ChoreName"]. " Notes: " . $row["ChoreNotes"] . "<br>";
+    session_start();
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: signin.html');
+        exit;
     }
-} else {
-    echo "0 results";
-}
+    $servername = "localhost";
+    $username = "ics325sp2203";
+    $password = "7846";
+    $database = "ics325sp2203";
+    // connection
+    $db = new mysqli($servername, $username, $password, $database);
 
+    if ($db->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-    mysqli_close($db); // Closing Connection with Server
-  ?>
+    $id = $_SESSION['id'];
+
+    $sql = "SELECT choreName FROM chores WHERE userID = '$id'" ;
+    $chores = mysqli_query($db, $sql);
+
+    if (mysqli_num_rows($chores) > 0) {
+      // output data of each row
+      while($row = mysqli_fetch_assoc($chores)) {
+          echo $row["choreName"]. "<br/>";
+      }
+  } else {
+      echo "0 results";
+  }
+  
+    mysqli_close($db);
+    ?>
     </div>
 
 </body>

@@ -17,6 +17,7 @@
     <!--Insert Page Heading-->
     
     <div class="heading">
+        <br/><br/>
         <h1>Chore Sign-Up Confirmation</h1>
     </div>
     <br></br>
@@ -58,22 +59,22 @@
     }
     mysqli_close($db);
     ?>
-        <h2>Your Information:</h2>
+        <!-- <h2>Your Information:</h2>
        
     </div>
     <?php
 
-        $choreName = $_POST['choreName'];
-        $notes = $_POST['notes'];
+      //  $choreName = $_POST['choreName'];
+      //  $notes = $_POST['notes'];
         
-        if (empty($choreName)) {
-            echo "No chore selected."; 
-        }   
-            else {
-            echo "Chore selected: ", $choreName;
-            }
-        echo "Comments: ", $notes;    
-    ?>    
+      //  if (empty($choreName)) {
+     //       echo "No chore selected."; 
+     //   }   
+     //       else {
+     //       echo "Chore selected: ", $choreName;
+     //       }
+     //   echo "Comments: ", $notes;    
+    ?>     -->
 </body>
 <br></br>
 <!--script for footer-->

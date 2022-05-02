@@ -13,7 +13,7 @@ if (mysqli_connect_errno()) {
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 // We don't have the password or email info stored in sessions so instead we can get the results from the database.
-$stmt = $con->prepare('SELECT password, email FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT password, email, mailingaddress, phonenumber FROM accounts WHERE id = ?');
 // In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
@@ -39,7 +39,7 @@ $stmt->close();
   <br></br>
   <body>
   <div class="heading">
-  <p>Welcome back, <?=$_SESSION['name']?>!</p> <br>
+  <h1>Welcome back, <?=$_SESSION['name']?>!</h1> <br>
       <!--User will be dynamically created-->
     </div>
     <br></br>
@@ -56,12 +56,16 @@ $stmt->close();
 						<td><?=$_SESSION['name']?></td>
 					</tr>
 					<tr>
-						<td>Password:</td>
-						<td><?=$password?></td>
-					</tr>
-					<tr>
 						<td>Email:</td>
 						<td><?=$email?></td>
+					</tr>
+          <tr>
+						<td>Phone Number:</td>
+						<td><?=$_SESSION['phonenumber']?></td>
+					</tr>
+          <tr>
+						<td>Address:</td>
+						<td><?=$_SESSION['mailingaddress']?></td>
 					</tr>
 				</table>
 </div>
@@ -115,9 +119,9 @@ $stmt->close();
         <label for="username">Username:</label><br />
         <input type="text" name="username" placeholder="Username" /><br />
         <label for="password">Password:</label><br />
-        <input type="text" name="password" placeholder="Password" /> <br />
+        <input type="password" name="password" placeholder="Password" /> <br />
         <label for="newPassword">New Password:</label><br />
-        <input type="text" name="newPassword" placeholder="New Password" /> <br />
+        <input type="password" name="newPassword" placeholder="New Password" /> <br />
         <input type="submit" value="Submit" />
       </form>
     </div>
@@ -127,11 +131,18 @@ $stmt->close();
 
 <h2> To view previous chores select below </h2>
 <div>
+<br/><br/>
   <form action="choreResults.php" method="GET">
   <input type="submit" value="Go to Chores" />
 </form>
 </div>
-
+<h2>View our Volunteer Contact Info (Admin Only)</h2>
+<br/>
+<div>
+    <form action="contactPage.php" method="GET">
+    <input type="submit" value="Go to Contacts" />
+  </form>
+  </div>
 
   <br><br>
   <h2> To apply for higher skill jobs, fill out the form below </h2>
