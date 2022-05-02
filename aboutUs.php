@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <?php
 session_start();
 if(isset($_SESSION['loggedin'])){
@@ -86,3 +88,4 @@ if(!isset($_SESSION['loggedin'])){
 <!--End Page-->
 
 </html>
+>>>>>>> 4596c039734582979bae98f85e8a4f1487d821eb
