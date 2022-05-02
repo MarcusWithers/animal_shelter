@@ -14,6 +14,7 @@
     <script language="javascript" type="text/javascript" src="header.txt"></script>
     <!--Insert Page Heading-->
     <div class="heading">
+    </br>
         <h1> Thank you for applying! </h1>
 		<h2> Our Volunteer Coordinator will be in touch shortly </h2>
     </div>
@@ -33,7 +34,6 @@ if ($db->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo "New Account under Review";
-
 
 $full_name = $_REQUEST['full_name'];
 $email = $_REQUEST['email'];

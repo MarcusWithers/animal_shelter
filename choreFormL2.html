@@ -24,13 +24,15 @@
     <!--Insert Body of Page-->
     <div class="body" >
         <h2>Select Your Chore(s) Below:</h2><br/>
+        
     </div>
-    <form action="choreConfirmation.php" method="post">
+    <form action="choreConfirmation.php" method="GET">
 
-        <label class = "choreContainer"><input type="checkbox" name="choreName" value="kennelCleaning">Kennel Cleaning</label>
-        <label class = "choreContainer"><input type="checkbox" name="choreName" value="feedingWatering">Feeding / Watering</label>
-        <label class = "choreContainer"><input type="checkbox" name="choreName" value="walking">Walking</label>
-        <label class = "choreContainer"><input type="checkbox" name="choreName" value="socializing">Socializing</label>
+        <input type="checkbox" name="choreName[]" value="Kennel Cleaning"> Kennel Cleaning <br/>
+        <input type="checkbox" name="choreName[]" value="Feeding / Watering"> Feeding / Watering <br/>
+        <input type="checkbox" name="choreName[]" value="Walking"> Walking <br/>
+        <input type="checkbox" name="choreName[]" value="Socializing"> Socializing <br/>
+
         <br><br>
        
         <label for="notes"> Comments about the job:</label>
@@ -38,7 +40,6 @@
         
         <input type="submit" value="Submit">
         <a href="chorehomepage.html">Go back to level select:</a>
-
 </body>
 <br></br>
 <!--script for footer-->

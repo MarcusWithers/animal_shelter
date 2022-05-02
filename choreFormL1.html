@@ -26,11 +26,11 @@
         <h2>Select Your Chore(s) Below:</h2><br/>
         
     </div>
-    <form action="choreConfirmation.php" method="post">
+    <form action="choreConfirmation.php" method="GET">
 
-        <label class = "choreContainer"><input type="checkbox" name="choreName1" value="laundry">Laundry</label>
-        <label class = "choreContainer"><input type="checkbox" name="choreName2" value="dishes">Dishes</label>
-        <label class = "choreContainer"><input type="checkbox" name="choreName3" value="shelterBeautification">Shelter Beautification</label>
+        <input type="checkbox" name="choreName[]" value="Laundry"> Laundry <br/>
+        <input type="checkbox" name="choreName[]" value="Dishes"> Dishes <br/>
+        <input type="checkbox" name="choreName[]" value="Shelter Beautification"> Shelter Beautification <br/>
         <br><br>
        
         <label for="notes"> Comments about the job:</label>
