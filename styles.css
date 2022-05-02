@@ -188,3 +188,7 @@ footer {
   cursor: pointer;
   font-size: 22px;
 }
+figcaption {
+  border: 1px blue;
+  text-align: center;
+}
