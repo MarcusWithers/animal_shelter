@@ -42,15 +42,15 @@ if ($stmt = $con->prepare('SELECT id, password, isAdmin FROM accounts WHERE user
         } else {
             // Incorrect password
             echo 'Incorrect password';
+            echo '<p>Return to the home page here:</p>';
+            echo '<a href = "home.php"> Take me Back home! </a>';
         }
     } else {
         // Incorrect username
         echo 'Incorrect username';
+        echo '<p>Return to the home page here:</p>';
+            echo '<a href = "home.php"> Take me Back home! </a>';
     }
-
-
-	$stmt->close();
 }
 ?>
 
-?>

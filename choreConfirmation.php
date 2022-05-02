@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+  echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,23 +49,31 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    echo "Chores selected:";
+    
 
     $choreName = $_GET['choreName'];
     $id = $_SESSION['id'];
 
-    for($i=0; $i < count($choreName); $i++){
+    if (count($choreName) == 0){
+        echo "No chore selected.", '<br/><br/>';
+    } 
+    else{   
+         echo "Chores selected:";
+         for($i=0; $i < count($choreName); $i++){
 
-        $sql = "INSERT INTO chores (choreName, userID) VALUES ('$choreName[$i]','$id')";
+            $sql = "INSERT INTO chores (choreName, userID) VALUES ('$choreName[$i]','$id')";
 
-        if (mysqli_query($db, $sql)) {
-            // echo "<h3>Please contact us if the selection is inaccurate";
-            echo nl2br("\n$choreName[$i]\n");
-        }
-        else {
-            echo "ERROR: $sql. " . mysqli_error($db);
+            if (mysqli_query($db, $sql)) {
+                // echo "<h3>Please contact us if the selection is inaccurate";
+                echo nl2br("\n$choreName[$i]\n");
+            }
+            else {
+                echo "ERROR: $sql. " . mysqli_error($db);
+            }
         }
     }
+    echo '<p>Return to the Chore page here:</p>';
+            echo '<a href = "chorehomepage.php"> Take me Back  </a>';
     mysqli_close($db);
     ?>
         <!-- <h2>Your Information:</h2>

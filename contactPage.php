@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+  echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,13 +52,14 @@
         }
         //echo "Successfully connected to database";
        //MySQL Query to read data
-       $query = "SELECT name, email, phonenumber, volunteerlevel FROM accounts ORDER BY volunteerlevel DESC";
+       $query = "SELECT name, email, phonenumber FROM accounts ORDER BY name ASC";
        $result = mysqli_query($db, $query);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo "<br> Level: ". $row["volunteerlevel"]. " Name: ". $row["name"]. " Phone: " . $row["phonenumber"] . " Email: " . $row["email"] . "<br>";
+        echo " Name: ". $row["name"]. "   Phone: " . $row["phonenumber"] . "   Email: " . $row["email"] . "<br>";
+        echo "<br/> ";
     }
 } else {
     echo "0 results";

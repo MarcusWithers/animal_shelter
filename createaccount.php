@@ -53,17 +53,17 @@ src="header.txt"></script>
           <h2>New Volunteers</h2><br />
           <h4>Once approved you can begin to volunteer</h4><br />
           <label for="full_name">Your Full Name:</label><br />
-          <input type="text" id="full_name" name="full_name" placeholder ="Full Name" /><br />
+          <input type="text" id="full_name" name="full_name" placeholder ="Full Name" required/><br />
           <label for="email">Email Address:</label><br />
-          <input type="text" id="email" name="email" placeholder = "Email"/><br />
+          <input type="text" id="email" name="email" placeholder = "Email" required/><br />
           <label for="username">User Name:</label><br />
-          <input type="text" id="username" name="username" placeholder ="User Name" /><br />
+          <input type="text" id="username" name="username" placeholder ="User Name" required/><br />
           <label for="password">Password:</label><br />
-          <input type="password" id="password" name="password" placeholder ="Enter a Password" /><br />
+          <input type="password" id="password" name="password" placeholder ="Enter a Password" required/><br />
           <label for="phone_number">Phone Number:</label><br />
-          <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /><br />
+          <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/><br />
           <label for="address">Address:</label><br />
-          <input type="text" id="address" name="address" placeholder ="Address" /><br />
+          <input type="text" id="address" name="address" placeholder ="Address" required/><br />
           <input type="submit" value="Create Account" />
         </form>
         <form action = "signin.php" method = "POST">

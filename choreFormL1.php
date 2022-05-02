@@ -36,7 +36,7 @@ if(!isset($_SESSION['loggedin'])){
         <h2>Select Your Chore(s) Below:</h2><br/>
         
     </div>
-    <form action="choreConfirmation.php" method="GET">
+    <form action="choreConfirmation.php" method="GET" required = true>
 
         <input type="checkbox" name="choreName[]" value="Laundry"> Laundry <br/> 
         <input type="checkbox" name="choreName[]" value="Dishes"> Dishes <br/>
