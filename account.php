@@ -48,27 +48,7 @@ $stmt->close();
   <div class = "container">
   <div class = "left_container">
   <img src="user.jpg" alt="user" width = "500"/>  
-  <div> 
-<h1>Your account details are below:</h1>
-				<table>
-					<tr>
-						<td>Username:</td>
-						<td><?=$_SESSION['name']?></td>
-					</tr>
-					<tr>
-						<td>Email:</td>
-						<td><?=$email?></td>
-					</tr>
-          <tr>
-						<td>Phone Number:</td>
-						<td><?=$_SESSION['phonenumber']?></td>
-					</tr>
-          <tr>
-						<td>Address:</td>
-						<td><?=$_SESSION['mailingaddress']?></td>
-					</tr>
-				</table>
-</div>
+  
   </div>
   <div class = "right_container">
   
@@ -129,13 +109,13 @@ $stmt->close();
 
 <br><br>
 
-<h2> To view previous chores select below </h2>
+<!-- <h2> To view previous chores select below </h2>
 <div>
 <br/><br/>
   <form action="choreResults.php" method="GET">
   <input type="submit" value="Go to Chores" />
 </form>
-</div>
+</div> -->
 <h2>View our Volunteer Contact Info (Admin Only)</h2>
 <br/>
 <div>
@@ -145,7 +125,9 @@ $stmt->close();
   </div>
 
   <br><br>
-  <h2> To apply for higher skill jobs, fill out the form below </h2>
+
+  <!-- Apply for higher skill -->
+  <!-- <h2> To apply for higher skill jobs, fill out the form below </h2>
   <div class="contact_container">
       <form action="processSkills.php" method="POST" >
       
@@ -195,7 +177,7 @@ Did you take the required course?
       </form>
   
   
-</div>
+</div> -->
 
 </body>
 <!--script for footer-->
