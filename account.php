@@ -69,11 +69,42 @@ $stmt->close();
   <div class = "right_container">
   
   <h2> Your Chores are: </h2><br>
-  <ol>
-      <li>Wash Dogs</li>
-      <li>Clean Cages </li>
-      <!--Chorse will be dynamically created-->
-  </ol> 
+  <table>
+					<tr>
+          <?php
+    session_start();
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: signin.html');
+        exit;
+    }
+    $servername = "localhost";
+    $username = "ics325sp2203";
+    $password = "7846";
+    $database = "ics325sp2203";
+    // connection
+    $db = new mysqli($servername, $username, $password, $database);
+
+    if ($db->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $id = $_SESSION['id'];
+
+    $sql = "SELECT choreName FROM chores WHERE userID = '$id'" ;
+    $chores = mysqli_query($db, $sql);
+
+    if (mysqli_num_rows($chores) > 0) {
+      // output data of each row
+      while($row = mysqli_fetch_assoc($chores)) {
+          echo $row["choreName"]. "<br/>";
+      }
+  } else {
+      echo "0 results";
+  }
+  
+    mysqli_close($db);
+    ?>
+	</table>
 </div>
 
 

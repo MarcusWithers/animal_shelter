@@ -17,17 +17,25 @@
     <script language="javascript" type="text/javascript" src="header.txt"></script>
     <!--Insert Page Heading-->
     <div class="heading">
+        <br/>
         <h1>Volunteer Contact List</h1>
      </div>
     <br></br>
     <!--Insert Body of Page-->
     <div class="body" >
     <?php
+    session_start();
       $servername = "localhost";
       $username = "ics325sp2203";
       $password = "7846";
       $database = "ics325sp2203";
       // connection
+
+      if ($_SESSION['isAdmin'] == '0') {
+        header('Location: aboutUs.html');
+        exit;
+    }
+
       $db = new mysqli($servername, $username, $password, $database);
       
       if ($db->connect_error) {
