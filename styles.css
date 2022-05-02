@@ -63,6 +63,12 @@ body {
   margin-left: 15px;
 }
 
+.aboutbody{
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 15px;
+
+}
 .user {
   display: flex;
   justify-content: flex-start;
@@ -89,9 +95,7 @@ input {
   margin-top: 75px;
   border-bottom: thick double #000080;
 }
-.aboutbody{
-  border-bottom: thick double #000080;
-}
+
 
 .mission {
   display: flex;
@@ -191,4 +195,9 @@ footer {
 figcaption {
   border: 1px blue;
   text-align: center;
+}
+
+.center-text {
+  text-align: center;
+  display: block;
 }
