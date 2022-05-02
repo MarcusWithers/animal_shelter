@@ -38,16 +38,13 @@ if(!isset($_SESSION['loggedin'])){
     </div>
     <form action="choreConfirmation.php" method="GET">
 
-        <input type="checkbox" name="choreName[]" value="Laundry"> Laundry <br/>
+        <input type="checkbox" name="choreName[]" value="Laundry"> Laundry <br/> 
         <input type="checkbox" name="choreName[]" value="Dishes"> Dishes <br/>
         <input type="checkbox" name="choreName[]" value="Shelter Beautification"> Shelter Beautification <br/>
         <br><br>
-       
-        <label for="notes"> Comments about the job:</label>
-        <input type="text" id="comments" name="comments"><br><br>
-        
+  
         <input type="submit" value="Submit">
-        <a href="chorehomepage.html">Go back to level select:</a>
+        <a href="chorehomepage.php">Go back to level select:</a>
 </body>
 <br></br>
 <!--script for footer-->
