@@ -25,10 +25,10 @@
     <div class="body" >
     <?php
     session_start();
-      $servername = "localhost";
-      $username = "ics325sp2203";
-      $password = "7846";
-      $database = "ics325sp2203";
+    $servername = "localhost";
+    $username = "ics325sp2203";
+    $password = "7846";
+    $database = "ics325sp2203";
       // connection
 
       if ($_SESSION['isAdmin'] == '0') {

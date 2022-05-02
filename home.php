@@ -5,10 +5,10 @@ Josiah Walter, and Marcus Withers -->
 <?php
 session_start();
 if(isset($_SESSION['loggedin'])){
-	echo "<li class = 'nav'><a href = 'account.php'>Account</a></li>";
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
 }
 if(!isset($_SESSION['loggedin'])){
-	header('Location: signin.html');
+	header('Location: signin.php');
 	exit;
 }
 ?>
@@ -23,13 +23,6 @@ if(!isset($_SESSION['loggedin'])){
   </head>
   <!--No header script due to differences with sign on vs sign off-->
   <header>
-	<?php
-	if(isset($_SESSION['loggedin'])){
-		echo "<form method='POST' action='signout.php'>";
-		echo "<input class='headerSignOn' type='submit' Value='Sign-out' />";
-	echo "</form>";
-	}
-	?>
 	<!--[if lte IE 8]>
 	<form method="POST" action="signin.html">
 		<input class="headerSignOn" type="submit" Value="Sign-in" />

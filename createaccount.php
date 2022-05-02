@@ -66,7 +66,7 @@ src="header.txt"></script>
           <input type="text" id="address" name="address" placeholder ="Address" /><br />
           <input type="submit" value="Create Account" />
         </form>
-        <form action = "signin.html" method = "POST">
+        <form action = "signin.php" method = "POST">
           <h2> Already have an account? Sign in below! </h2>
           <input type = "submit" value = "Sign in" />
         </form>

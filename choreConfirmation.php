@@ -26,7 +26,7 @@
     <?php
     session_start();
     if (!isset($_SESSION['loggedin'])) {
-        header('Location: signin.html');
+        header('Location: signin.php');
         exit;
     }
     $servername = "localhost";

@@ -1,9 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) {
-	header('Location: signin.html');
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+	header('Location: signin.php');
 	exit;
 }
+
 $servername = "localhost";
 $username = "ics325sp2203";
 $password = "7846";
@@ -82,9 +86,9 @@ $stmt->close();
         exit;
     }
     $servername = "localhost";
-    $username = "ics325sp2203";
-    $password = "7846";
-    $database = "ics325sp2203";
+   $username = "root";
+    $password = "";
+    $database = "metropolitan state animal shelter";
     // connection
     $db = new mysqli($servername, $username, $password, $database);
 
