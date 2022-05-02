@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <?php
 session_start();
 if(isset($_SESSION['loggedin'])){
@@ -34,11 +36,11 @@ if(!isset($_SESSION['loggedin'])){
         <img src="kitten.jpg" alt="kitten" width="400px" /> 
         </div>
    
-        <div class= "rightContainer">
+        <!-- <div class= "rightContainer">
         <h2>
         MetroState Animal Shelter 
     </h2>
-    </br>
+    </br> -->
     
     <div class="aboutbody"  >
        
@@ -52,7 +54,7 @@ if(!isset($_SESSION['loggedin'])){
        
         
         <br></br>
-        <img src="shep.jpg" alt="shep" width="200px" />
+        <img src="shep.jpg" alt="shep" width="100px" class="centerPic"/>
     </p>
     </div>
     </div>
@@ -86,3 +88,4 @@ if(!isset($_SESSION['loggedin'])){
 <!--End Page-->
 
 </html>
+>>>>>>> 4596c039734582979bae98f85e8a4f1487d821eb

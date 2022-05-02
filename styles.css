@@ -16,8 +16,23 @@
   display: flex;
   justify-content: space-around;
 }
+.navbar a {
+  float: left;
+  color: #2950dc;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
 .navbar ol {
   list-style-type: none;
+}
+.navbar a {
+  float: left;
+  color: #2950dc;
+  text-align: center;
+  
+  text-decoration: none;
+  font-size: 17px;
 }
 .nav {
   display: inline-block;
@@ -71,6 +86,7 @@ body {
   display: flex;
   justify-content: flex-start;
   padding-right: 15px;
+  padding-left: 15px;
 
 }
 .user {
@@ -205,4 +221,10 @@ figcaption {
 .center-text {
   text-align: center;
   display: block;
+}
+.centerPic{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }

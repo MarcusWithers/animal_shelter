@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+  echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +44,10 @@
     <div class="banner">
 		<h1>Thank you for Cleaning the Kennels! <h1>
 	  </div>
+      <br/><br/>
+      <div>
+      <a href="chorehomepage.php"><button>Back to Chore List:</button></a>
+        </div>
 </body>
 <br></br>
 <!--script for footer-->

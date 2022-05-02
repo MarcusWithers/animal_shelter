@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+  echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <!--Insert Page Name-->
-    <title>How to Care for Sick</title>
+    <title>How to Care for the Sick</title>
 </head>
 
 <body>
@@ -15,6 +24,7 @@
     <script language="javascript" type="text/javascript" src="header.txt"></script>
     <!--Insert Page Heading-->
     <div class="heading">
+    <br/><br/>
         <h1> How to Care for the Sick and Injured</h1>
     </div>
     <br></br>
@@ -32,6 +42,10 @@
     <div class="banner">
 		<h1>Thank you for TLC! <h1>
 	  </div>
+      <br/><br/>
+      <div>
+      <a href="chorehomepage.php"><button>Back to Chore List:</button></a>
+        </div>
 </body>
 <br></br>
 <!--script for footer-->

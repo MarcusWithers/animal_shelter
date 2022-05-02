@@ -44,12 +44,9 @@ if(!isset($_SESSION['loggedin'])){
         <input type="checkbox" name="choreName[]" value="Socializing"> Socializing <br/>
 
         <br><br>
-       
-        <label for="notes"> Comments about the job:</label>
-        <input type="text" id="comments" name="comments"><br><br>
-        
+            
         <input type="submit" value="Submit">
-        <a href="chorehomepage.html">Go back to level select:</a>
+        <a href="chorehomepage.php">Go back to level select:</a>
 </body>
 <br></br>
 <!--script for footer-->
