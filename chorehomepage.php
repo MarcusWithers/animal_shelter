@@ -49,7 +49,7 @@ if(!isset($_SESSION['loggedin'])){
                   <a href="choresDishes.html">Click here to learn how!</a>
                 </li>
                 <li>Shelter Beautification - General cleaning and organizing of the shelter.
-                  <a href="errorpage.html">Click here to learn how!</a>
+                  <a href="choresBeatify.html">Click here to learn how!</a>
                 </li>
             </ul>
           <br />
@@ -70,10 +70,10 @@ if(!isset($_SESSION['loggedin'])){
           <br />
           <!--Generic Picture--> <img src="level2pic.jpg" alt="level2pic" width="600px"  />
           <ul>
-            <li>Kennel Cleaning - The emptying and sanitization of used kennels for our animals.</li>
-            <li>Feeding/Watering - Giving the appropriate food to each animal and changing water supplies.</li>
-            <li>Walking - Taking our animals to get some exercise (weather permitting).</li>
-            <li>Socializing - Giving our animals time to socialize with other animals to get them better acclimated to each other.</li>
+            <li>Kennel Cleaning - The emptying and sanitization of used kennels for our animals. <a href="choresKennelCleaning.html">Click here to learn how!</a></li>
+            <li>Feeding/Watering - Giving the appropriate food to each animal and changing water supplies. <a href="choresFeedingWatering.html">Click here to learn how!</a></li>
+            <li>Walking - Taking our animals to get some exercise (weather permitting). <a href="choresWalking.html">Click here to learn how!</a></li>
+            <li>Socializing - Giving our animals time to socialize with other animals to get them better acclimated to each other. <a href="choresSocializing.html">Click here to learn how!</a></li>
           <br />
         <a href="choreFormL2.php"><button>Sign up for Level Two Chores here:</button></a>
         <br />
@@ -90,9 +90,9 @@ if(!isset($_SESSION['loggedin'])){
           <br />
           <!--Generic Picture--> <img src="level3pic.jpg" alt="level3pic" width="600px"  />
           <ul>
-            <li>Caring for the Sick - General welfare checking of our animals. Paying special attention to medical needs.</li>
-            <li>Medications - Giving medications to our animals.</li>
-            <li>Treatments - Providing any medically-specific treatments to our animals.</li>
+            <li>Caring for the Sick - General welfare checking of our animals. Paying special attention to medical needs. <a href="choresSick.html">Click here to learn how!</a></li>
+            <li>Medications - Giving medications to our animals. <a href="choreMed.html">Click here to learn how!</a></li>
+            <li>Treatments - Providing any medically-specific treatments to our animals. <a href="choresTreat.html">Click here to learn how!</a></li>
           <br />
         <a href="choreFormL3.php"><button>Sign up for Level Three Chores here:</button></a>
         </div>
