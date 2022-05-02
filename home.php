@@ -34,9 +34,9 @@ if(!isset($_SESSION['loggedin'])){
 			<ol>
 				<li class = "nav"><a href = "home.php">Home</a></li>
 				<li class = "nav"><a href = "account.php">Profile</a></li>
-				<li class = "nav"><a href = "chorehomepage.html">Chores</a></li>
-				<li class = "nav"><a href = "aboutUs.html">About Us</a></li>
-				<li class = "nav"><a href = "contactform.html">Contact Page</a></li>
+				<li class = "nav"><a href = "chorehomepage.php">Chores</a></li>
+				<li class = "nav"><a href = "aboutUs.php">About Us</a></li>
+				<li class = "nav"><a href = "contactform.php">Contact Page</a></li>
 			</ol>
 			</nav>
 		</div>
@@ -156,7 +156,7 @@ if(!isset($_SESSION['loggedin'])){
 	<footer class = "signin_footer">
 		<h1>We Can't Do it Without You</h1> <br>
 		<h4>Questions or any last reservations? Reach out to our Volunteer Coordinator.</h4><br><br>
-		<form method="POST" action="contactform.html">
+		<form method="POST" action="contactform.php">
 			<input type = "submit" value = "Contact Us"/>
 		</form>
 	<!--script for footer-->

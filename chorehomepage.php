@@ -4,8 +4,7 @@ if(isset($_SESSION['loggedin'])){
 	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
 }
 if(!isset($_SESSION['loggedin'])){
-	header('Location: signin.php');
-	exit;
+  echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
 }
 ?>
 <!DOCTYPE html>
@@ -55,7 +54,7 @@ if(!isset($_SESSION['loggedin'])){
             </ul>
           <br />
         </div>
-        <a href="choreFormL1.html"><button>Sign up for Level One Chores here:</button></a>
+        <a href="choreFormL1.php"><button>Sign up for Level One Chores here:</button></a>
        </a>
       </div>
       <br /> 
@@ -76,7 +75,7 @@ if(!isset($_SESSION['loggedin'])){
             <li>Walking - Taking our animals to get some exercise (weather permitting).</li>
             <li>Socializing - Giving our animals time to socialize with other animals to get them better acclimated to each other.</li>
           <br />
-        <a href="choreFormL2.html"><button>Sign up for Level Two Chores here:</button></a>
+        <a href="choreFormL2.php"><button>Sign up for Level Two Chores here:</button></a>
         <br />
         </div>
         <div class="w3-container"> 
@@ -95,7 +94,7 @@ if(!isset($_SESSION['loggedin'])){
             <li>Medications - Giving medications to our animals.</li>
             <li>Treatments - Providing any medically-specific treatments to our animals.</li>
           <br />
-        <a href="choreFormL3.html"><button>Sign up for Level Three Chores here:</button></a>
+        <a href="choreFormL3.php"><button>Sign up for Level Three Chores here:</button></a>
         </div>
     <br>
     <div class="banner">

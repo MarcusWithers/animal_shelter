@@ -32,7 +32,7 @@
       // connection
 
       if ($_SESSION['isAdmin'] == '0') {
-        header('Location: account.php');
+        header('Location: errorpage.html');
         exit;
     }
 

@@ -4,8 +4,7 @@ if(isset($_SESSION['loggedin'])){
 	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
 }
 if(!isset($_SESSION['loggedin'])){
-	header('Location: signin.php');
-	exit;
+  echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
 }
 ?>
 <!DOCTYPE html>
@@ -76,9 +75,9 @@ if(!isset($_SESSION['loggedin'])){
 </div>
 <br><br>
 <br/>
-<div class="center-text">
-<a href = "contactform.html">Contact Us</a>
-</div>
+<form method="POST" action="contactform.php">
+			<input type = "submit" value = "Contact Us"/>
+		</form>
 </html>
 
 <br></br>

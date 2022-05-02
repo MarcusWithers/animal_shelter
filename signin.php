@@ -114,7 +114,7 @@ if(!isset($_SESSION['loggedin'])){
   <footer class = "signin_footer">
       <h1>We Can't Do it Without You</h1> <br>
       <h4>Questions or any last reservations? Reach out to our Volunteer Coordinator.</h4><br><br>
-      <form method="POST" action="contactform.html">
+      <form method="POST" action="contactform.php">
           <input type = "submit" value = "Contact Us"/>
       </form>
   </footer>

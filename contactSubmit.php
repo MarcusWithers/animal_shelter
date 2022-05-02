@@ -1,14 +1,11 @@
 <?php
 
 // User input Variables
-$FirstName = $_POST['FirstName'];
-$LastName = $_POST['LastName'];
-$Address = preg_replace('/\t|\R/', ' ', $_POST['Address']);
-@$Yes = $_POST['Yes'];
-@$No = $_POST['No'];
-$question = $_POST['question'];
-$document_root = $_SERVER['DOCUMENT_ROOT'];
+$FullName = $_REQUEST['fullname'];
+$Email = $_REQUEST['email'];
+$question = $_REQUEST['question'];
 $date = date('H:i, jS F Y');
+$document_root = $_SERVER['DOCUMENT_ROOT'];
 ?>
   
   <!DOCTYPE html>
@@ -20,7 +17,7 @@ $date = date('H:i, jS F Y');
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <!--Insert Page Name-->
-    <title>Skill Review</title>
+        <title>Contact Us</title>
 </head>
 
 <body>
@@ -29,6 +26,7 @@ $date = date('H:i, jS F Y');
     <!--Insert Page Heading-->
     
 	<div class="heading">
+    <br/><br/>
         <h1>MetroState Animal Shelter</h1>
     </div>
     <br></br>
@@ -37,36 +35,18 @@ $date = date('H:i, jS F Y');
         
        <?php
 
-echo $_POST['FirstName'] . " " . $_POST['LastName'] . '<br />';
-echo $_POST['FirstName'] .' has submitted a Level up Request.<br />';
+echo $_POST['fullname'] . " " . $_POST['email'] . " " . $_POST['question'] . '<br />';
+echo $_POST['fullname'] . ' has submitted a question.<br />';
 
 ?> 
 	
 	<?php
 
-$trained = " ";
-if ($Yes == true) {
-    $trained = "Yes";
-    echo "Your application is under review <br />";
-
-}
-else {
-    $trained = "No";
-    echo "You must complete all training before you can Level up <br />";
-    exit;
-}
-
-echo "<p></p>";
-
-?>
-	
-	<?php
-
-$outputstring = $date . "\t" . $FirstName . " \t" . $LastName . " \t "
-    . $trained . "\t" . $question . "\n";
+$outputstring = $date . "\t" . $fullname . " \t" . $email . " \t "
+    . "\t" . $question . "\n";
 
 // open file for appending
-$myfile = fopen("levelUpRequests.txt", 'ab') or die("Your request could not be processed at this time.");
+$myfile = fopen("questionForm.txt", 'ab') or die("Your request could not be processed at this time.");
 
 
 flock($myfile, LOCK_EX);
