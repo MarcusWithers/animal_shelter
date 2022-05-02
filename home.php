@@ -1,5 +1,5 @@
 <!-- ICS 325-50 Spring 2022
-Project Part 2 due 3/28/2022
+MetroState Animal Shelter Volunteers
 Group 6 Authors: Crystal Backlund, 
 Josiah Walter, and Marcus Withers -->
 <?php
@@ -59,18 +59,17 @@ if(!isset($_SESSION['loggedin'])){
     <!--Insert Body of Page-->
       <div class = "container">
 		<div class= "leftContainer">
-			<h2>Sign in or Create Account</h2>
+			<h2>Refer a Friend Today!</h2>
 			<br></br>
 			<p> MetroState Animal Shelter is always in need of Volunteers. Volunteers can do many things that will directly benefit the animals in MAS' Care. Returning Volunteers are valued members of the MAS's Family. </p>
 			<p> Volunteering is an immeasurably rewarding experience and integral to the success of MetroState Animal Shelter's mission. We want each volunteer to feel that he or she is a part of our team, each important to our overall success. The shelter could not exist without the support of volunteers who bring a diversity of interests, knowledge, expertise, and caring to our organization.</p>
 			<br></br>
 			<h4>Our Shelter is fortunate to have so many dedicated volunteers that serve in a variety of volunteer positions.</h4>
-			<p>Whether you are walking dogs, socializing cats or performing yard clean-up, you help make lives better for pets and people. We value not only the time you are able to give us, but also your support of our important mission.</p>
+			<p>Whether you are walking dogs, socializing cats or performing yard clean-up, you help make lives better for pets and people. We value not only the time you are able to give us, but also your support of our important mission. </p>
+
 			<br></br>
+			<p> If you know of a friend or family member who might want to join the MAS Family, please have them fill out the account registration link below. </p>
 			<br></br>
-			<form method="POST" action="signin.html">
-				<input type="submit" Value="Sign-in" />
-			</form>
 			<form method="POST" action="createaccount.php">
 				<input type="submit" value="Create Account" />
 			</form>
