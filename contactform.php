@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+  echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign In" />';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,8 +29,11 @@
 <br></br>
 <body>
     <!--Insert Page Heading-->
+    <div class="heading">
+      <h1>Contact Us</h1>
+  </div>
     <div class="contact_container">
-      <form action="#">
+      <form action= "contactSubmit.php" method="POST">
         <label for="fullname">Full Name:</label><br />
         <input type="text" name="fullname" placeholder="Full Name" /><br />
         <label for="email">Email:</label><br />

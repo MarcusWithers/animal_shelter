@@ -1,8 +1,17 @@
 <!-- ICS 325-50 Spring 2022
-Project Part 2 due 3/28/2022
+MetroState Animal Shelter Volunteers
 Group 6 Authors: Crystal Backlund, 
 Josiah Walter, and Marcus Withers -->
-
+<?php
+session_start();
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+	header('Location: signin.php');
+	exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,19 +23,20 @@ Josiah Walter, and Marcus Withers -->
   </head>
   <!--No header script due to differences with sign on vs sign off-->
   <header>
-	
+	<!--[if lte IE 8]>
 	<form method="POST" action="signin.html">
 		<input class="headerSignOn" type="submit" Value="Sign-in" />
 	</form>
+-->
 	<img src="logo.png" alt="pawprintlogo" />
 		<div class = "navbar">
 			<nav class = "navbar">
 			<ol>
-				<li class = "nav"><a href = "home.html">Home</a></li>
+				<li class = "nav"><a href = "home.php">Home</a></li>
 				<li class = "nav"><a href = "account.php">Profile</a></li>
-				<li class = "nav"><a href = "chorehomepage.html">Chores</a></li>
-				<li class = "nav"><a href = "aboutUs.html">About Us</a></li>
-				<li class = "nav"><a href = "contactform.html">Contact Page</a></li>
+				<li class = "nav"><a href = "chorehomepage.php">Chores</a></li>
+				<li class = "nav"><a href = "aboutUs.php">About Us</a></li>
+				<li class = "nav"><a href = "contactform.php">Contact Page</a></li>
 			</ol>
 			</nav>
 		</div>
@@ -36,24 +46,23 @@ Josiah Walter, and Marcus Withers -->
     
     <!--Insert Page Heading-->
     <div class="heading">
-        <h1>Welcome Volunteers </h1>
+		<h1>Welcome back, <?=$_SESSION['name']?>!</h1>
     </div>
     <br></br>
     <!--Insert Body of Page-->
       <div class = "container">
 		<div class= "leftContainer">
-			<h2>Sign in or Create Account</h2>
+			<h2>Refer a Friend Today!</h2>
 			<br></br>
 			<p> MetroState Animal Shelter is always in need of Volunteers. Volunteers can do many things that will directly benefit the animals in MAS' Care. Returning Volunteers are valued members of the MAS's Family. </p>
 			<p> Volunteering is an immeasurably rewarding experience and integral to the success of MetroState Animal Shelter's mission. We want each volunteer to feel that he or she is a part of our team, each important to our overall success. The shelter could not exist without the support of volunteers who bring a diversity of interests, knowledge, expertise, and caring to our organization.</p>
 			<br></br>
 			<h4>Our Shelter is fortunate to have so many dedicated volunteers that serve in a variety of volunteer positions.</h4>
-			<p>Whether you are walking dogs, socializing cats or performing yard clean-up, you help make lives better for pets and people. We value not only the time you are able to give us, but also your support of our important mission.</p>
+			<p>Whether you are walking dogs, socializing cats or performing yard clean-up, you help make lives better for pets and people. We value not only the time you are able to give us, but also your support of our important mission. </p>
+
 			<br></br>
+			<p> If you know of a friend or family member who might want to join the MAS Family, please have them fill out the account registration link below. </p>
 			<br></br>
-			<form method="POST" action="signin.html">
-				<input type="submit" Value="Sign-in" />
-			</form>
 			<form method="POST" action="createaccount.php">
 				<input type="submit" value="Create Account" />
 			</form>
@@ -147,7 +156,7 @@ Josiah Walter, and Marcus Withers -->
 	<footer class = "signin_footer">
 		<h1>We Can't Do it Without You</h1> <br>
 		<h4>Questions or any last reservations? Reach out to our Volunteer Coordinator.</h4><br><br>
-		<form method="POST" action="contactform.html">
+		<form method="POST" action="contactform.php">
 			<input type = "submit" value = "Contact Us"/>
 		</form>
 	<!--script for footer-->

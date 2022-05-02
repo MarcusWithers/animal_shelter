@@ -1,3 +1,30 @@
+<?php
+session_start();
+if(isset($_SESSION['loggedin'])){
+	echo '<form method="POST" action="signout.php"><input class="headerSignOut" type="submit" Value="Sign Out" />';
+}
+if(!isset($_SESSION['loggedin'])){
+	header('Location: signin.php');
+	exit;
+}
+
+$servername = "localhost";
+$username = "ics325sp2203";
+$password = "7846";
+$database = "ics325sp2203";
+$con = mysqli_connect($servername, $username, $password, $database);
+if (mysqli_connect_errno()) {
+	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+}
+// We don't have the password or email info stored in sessions so instead we can get the results from the database.
+$stmt = $con->prepare('SELECT password, email, mailingaddress, phonenumber FROM accounts WHERE id = ?');
+// In this case we can use the account ID to get the account info.
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->bind_result($password, $email);
+$stmt->fetch();
+$stmt->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +43,7 @@
   <br></br>
   <body>
   <div class="heading">
-      <h1>Welcome Back User! </h1> <br>
+  <h1>Welcome back, <?=$_SESSION['name']?>!</h1> <br>
       <!--User will be dynamically created-->
     </div>
     <br></br>
@@ -25,16 +52,50 @@
   <div class = "container">
   <div class = "left_container">
   <img src="user.jpg" alt="user" width = "500"/>  
+  
   </div>
   <div class = "right_container">
   
   <h2> Your Chores are: </h2><br>
-  <ol>
-      <li>Wash Dogs</li>
-      <li>Clean Cages </li>
-      <!--Chorse will be dynamically created-->
-  </ol> 
+  <table>
+					<tr>
+          <?php
+    session_start();
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: signin.html');
+        exit;
+    }
+    $servername = "localhost";
+    $username = "ics325sp2203";
+    $password = "7846";
+    $database = "ics325sp2203";
+    // connection
+    $db = new mysqli($servername, $username, $password, $database);
+
+    if ($db->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $id = $_SESSION['id'];
+
+    $sql = "SELECT choreName FROM chores WHERE userID = '$id'" ;
+    $chores = mysqli_query($db, $sql);
+
+    if (mysqli_num_rows($chores) > 0) {
+      // output data of each row
+      while($row = mysqli_fetch_assoc($chores)) {
+          echo $row["choreName"]. "<br/>";
+      }
+  } else {
+      echo "0 results";
+  }
+  
+    mysqli_close($db);
+    ?>
+	</table>
 </div>
+
+
 </div><h2> <element class="photo">Change Your Password: </h2>
 <div class="contact_container">
   
@@ -42,9 +103,9 @@
         <label for="username">Username:</label><br />
         <input type="text" name="username" placeholder="Username" /><br />
         <label for="password">Password:</label><br />
-        <input type="text" name="password" placeholder="Password" /> <br />
+        <input type="password" name="password" placeholder="Password" /> <br />
         <label for="newPassword">New Password:</label><br />
-        <input type="text" name="newPassword" placeholder="New Password" /> <br />
+        <input type="password" name="newPassword" placeholder="New Password" /> <br />
         <input type="submit" value="Submit" />
       </form>
     </div>
@@ -52,16 +113,25 @@
 
 <br><br>
 
-<h2> To view previous chores select below </h2>
+<!-- <h2> To view previous chores select below </h2>
 <div>
+<br/><br/>
   <form action="choreResults.php" method="GET">
   <input type="submit" value="Go to Chores" />
 </form>
-</div>
-
+</div> -->
+<h2>View our Volunteer Contact Info (Admin Only)</h2>
+<br/>
+<div>
+    <form action="contactPage.php" method="GET">
+    <input type="submit" value="Go to Contacts" />
+  </form>
+  </div>
 
   <br><br>
-  <h2> To apply for higher skill jobs, fill out the form below </h2>
+
+  <!-- Apply for higher skill -->
+  <!-- <h2> To apply for higher skill jobs, fill out the form below </h2>
   <div class="contact_container">
       <form action="processSkills.php" method="POST" >
       
@@ -100,9 +170,9 @@
         <br>
         <p>
 Did you take the required course?
-	<input type= "radio" name="Yes" id= "Yes" value="Yes"/>
+	<input type= "radio" name="choice" id= "Yes" value="Yes"/>
 		<label for="Yes" > Yes </label>
-	<input type= "radio" name ="No" id ="No" value="No"/>
+	<input type= "radio" name ="choice" id ="No" value="No"/>
 		<label for="No" > No  </label>
 </p>
         <label for="question">Why should we increase your level?</label><br />
@@ -111,7 +181,7 @@ Did you take the required course?
       </form>
   
   
-</div>
+</div> -->
 
 </body>
 <!--script for footer-->

@@ -22,6 +22,7 @@ src="header.txt"></script>
     <div class="container">
       <div class="left_container">
         <img src="dog.jpg" alt="dog" width="500px" />
+        <br/>
         <h3>
           "I just love walking the dogs and feeding the cats at MetroState Animal Shelter."
         </h3>
@@ -32,13 +33,14 @@ src="header.txt"></script>
             Florence Hughes <br />
             <em>Volunteer Dog Walker</em>
           </h4>
+          <br/>
+          <br/> <br/> <br/>
         </div>
         <h2><strong>Volunteers are organized by their skill level</strong></h2>
         <br />
-        <ol>
+        <ol class="leveling" >
           <li>
-            Level 1: Laundry, Dishes and Shelter Beautification. (all never
-            ending tasks here)
+            Level 1: Laundry, Dishes and Shelter Beautification. 
           </li>
           <li>
             Level 2: Kennel cleaning, feeding/watering, walking, socializing.
@@ -48,61 +50,29 @@ src="header.txt"></script>
       </div>
       <div class="right_container">
         <form action="insert.php" method="POST">
-          <h2>New Volunteers</h2>
-          <br />
-          <h4>Once approved you can begin to volunteer</h4>
-          <br /><br /><br />
-          <label for="full_name">Your Full Name:</label>
-          <br />
-          <input type="text" id="full_name" name="full_name" placeholder ="Full Name" />
-          <br />
-          <label for="email">Email Address:</label>
-          <br />
-          <input type="text" id="email" name="email" placeholder = "Email"/>
-          <br />
-          <label for="userName">User Name:</label>
-          <br />
-          <input type="text" id="userName" name="userName" placeholder ="User Name" />
-          <br />
-          <label for="password">Password:</label>
-          <br />
-<input type="text" id="password" name="password" placeholder ="Enter a Password" />
-<br />
-          <label for="phone_number">Phone Number:</label>
-          <br />
-          <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
-          <br />
-          <label for="address">Address:</label>
-          <br />
-          <input type="text" id="address" name="address" placeholder ="Address" />
-          <br />
-          <label for="interests">What are you interested in?</label>
-          <br />
-          <select id="interests" name="interests">
-            <option value="brushing">Brushing</option>
-            <option value="washing">Washing</option>
-            <option value="walking">Walking</option>
-            <option value="playing">Playing</option>
-          </select>
-          <br />
+          <h2>New Volunteers</h2><br />
+          <h4>Once approved you can begin to volunteer</h4><br />
+          <label for="full_name">Your Full Name:</label><br />
+          <input type="text" id="full_name" name="full_name" placeholder ="Full Name" /><br />
+          <label for="email">Email Address:</label><br />
+          <input type="text" id="email" name="email" placeholder = "Email"/><br />
+          <label for="username">User Name:</label><br />
+          <input type="text" id="username" name="username" placeholder ="User Name" /><br />
+          <label for="password">Password:</label><br />
+          <input type="password" id="password" name="password" placeholder ="Enter a Password" /><br />
+          <label for="phone_number">Phone Number:</label><br />
+          <input type="text" id="phone_number" name="phone_number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /><br />
+          <label for="address">Address:</label><br />
+          <input type="text" id="address" name="address" placeholder ="Address" /><br />
           <input type="submit" value="Create Account" />
         </form>
-        <h3>
-          "Add a volunteer testimonial to increase conversions to your landing
-          page."
-        </h3>
-        <br />
-        <div class="user">
-          <img src="user.jpg" alt="user" width="75px" height="75px" />
-          <h4>
-            Florence Hughes <br />
-            <em>Volunteer Dog Walker</em>
-          </h4>
-        </div>
+        <form action = "signin.php" method = "POST">
+          <h2> Already have an account? Sign in below! </h2>
+          <input type = "submit" value = "Sign in" />
+        </form>
       </div>
     </div>
-    <br>
-    <div class="banner">
+       <div class="banner">
       <h1>MetroState Shelter Loves Their Volunteers! <h1>
     </div>
     <div class = "mission">
@@ -121,11 +91,11 @@ src="header.txt"></script>
 </div>
   </body>
   <footer class = "signin_footer">
-      <h1>We Can't Do it Without You</h1> <br>
-      <h4>Questions or any last reservations? Reach out to our Volunteer Coordinator.</h4><br><br>
-      <form action = "#">
-          <input type = "submit" value = "CALL TO ACTION "/>
-      </form>
+		<h1>We Can't Do it Without You</h1> <br>
+		<h4>Questions or any last reservations? Reach out to our Volunteer Coordinator.</h4><br><br>
+		<form method="POST" action="contactform.html">
+			<input type = "submit" value = "Contact Us"/>
+		</form>
   </footer>
   <!--script for footer-->
   <script language="javascript" type="text/javascript" 
